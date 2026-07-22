@@ -86,6 +86,12 @@ const ArrowDownIcon = () => (
   </svg>
 );
 
+const ArrowLeftIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+  </svg>
+);
+
 const AlertTriangleIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
     <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
@@ -702,10 +708,21 @@ export default function Home() {
           <h1>HigherEd Legal Careers & Salary Tracker</h1>
           <p>Local market intelligence and benchmarking tool for university in-house counsel</p>
         </div>
-        <div className="db-status" id="db-status-badge">
-          <span className="status-dot"></span>
-          <span className="status-label">Database Status:</span>
-          <span className="status-value">{jobs.length} Active Listings</span>
+        <div className="header-actions">
+          <a 
+            href="https://matt-worthington.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="back-home-link"
+            id="back-home-link"
+          >
+            <ArrowLeftIcon /> Back to matt-worthington.com
+          </a>
+          <div className="db-status" id="db-status-badge">
+            <span className="status-dot"></span>
+            <span className="status-label">Database Status:</span>
+            <span className="status-value">{jobs.length} Active Listings</span>
+          </div>
         </div>
       </header>
 

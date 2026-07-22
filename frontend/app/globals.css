@@ -129,6 +129,34 @@ a {
   font-weight: 500;
 }
 
+.header-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+}
+
+.back-home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.45rem 0.85rem;
+  border: 2px solid var(--neutral-black);
+  background: var(--bg-card);
+  transition: all var(--transition-fast);
+}
+
+.back-home-link:hover {
+  background: var(--neutral-black);
+  color: #ffffff;
+}
+
 .db-status {
   display: flex;
   align-items: center;
