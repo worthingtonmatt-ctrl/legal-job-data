@@ -1,0 +1,1356 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Swiss International Typographic Style Design Tokens */
+  --font-sans: 'Space Grotesk', 'Inter', -apple-system, Helvetica, Arial, sans-serif;
+  --font-body: 'Inter', -apple-system, Helvetica, Arial, sans-serif;
+  
+  /* High Contrast Swiss Palette */
+  --bg-app: #f9f9fb;
+  --bg-dashboard: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fcfcfd;
+  --bg-input: #ffffff;
+  --bg-input-focus: #fafafa;
+  
+  --border-color: #000000;
+  --border-muted: #e2e2e8;
+  --border-color-hover: #ff3b30; /* Swiss Red on hover */
+  
+  /* Flat Solid Accents */
+  --primary: #ff3b30;          /* Swiss Red */
+  --primary-dark: #d9230f;
+  --neutral-black: #000000;
+  
+  --accent: #0055ff;           /* Cobalt Blue */
+  --success: #008f51;          /* Flat Emerald Green */
+  --warning: #f59e0b;          /* Flat Amber */
+  --danger: #ff3b30;           /* Red */
+  
+  --text-main: #000000;
+  --text-body: #1c1c1e;
+  --text-muted: #55555c;
+  --text-dimmed: #8a8a8f;
+  --text-bright: #000000;
+  
+  /* Swiss design is flat, minimal shadows */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  
+  /* Sharp corners define Swiss Style */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  
+  --transition-fast: 0.1s ease;
+  --transition-normal: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Global resets */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  background-color: var(--bg-app);
+  color: var(--text-body);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  color: var(--text-main);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Custom Scrollbar - Flat Style */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-app);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-muted);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neutral-black);
+}
+
+/* Container - Structured Grid */
+.app-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 2rem;
+  border-bottom: 3px solid var(--neutral-black);
+}
+
+.header-title-section h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.5rem;
+}
+
+.header-title-section p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.db-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--neutral-black);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary);
+  border-radius: 0%; /* Flat square status indicator */
+}
+
+.status-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.status-value {
+  color: #ffffff;
+}
+
+/* Layout Grid - Flat Asymmetric */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sidebar Column */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Card base - Flat Swiss Style */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--neutral-black);
+  padding: 1.5rem;
+  box-shadow: none;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.glass-card:hover {
+  border-color: var(--primary);
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  border-bottom: 1px solid var(--neutral-black);
+  padding-bottom: 0.5rem;
+}
+
+.card-title svg {
+  color: var(--neutral-black);
+}
+
+/* Profile Form styling */
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.label-hint {
+  color: var(--text-dimmed);
+  font-weight: 400;
+}
+
+.input-with-symbol {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-symbol {
+  position: absolute;
+  left: 0.75rem;
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--bg-input);
+  border: 1px solid var(--neutral-black);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color var(--transition-fast);
+}
+
+.input-with-symbol .form-input {
+  padding-left: 1.5rem;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: var(--bg-input-focus);
+}
+
+.form-select {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--bg-input);
+  border: 1px solid var(--neutral-black);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23000000'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  transition: border-color var(--transition-fast);
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* Slider Style - Flat, Square Handle */
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form-range {
+  flex: 1;
+  height: 4px;
+  background: var(--border-muted);
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: var(--neutral-black);
+  transition: background-color var(--transition-fast);
+}
+
+.form-range::-webkit-slider-thumb:hover {
+  background: var(--primary);
+}
+
+.slider-val {
+  min-width: 2.2rem;
+  text-align: right;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  color: var(--neutral-black);
+}
+
+/* Filter Checkbox controls */
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-height: 180px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+  border: 1px solid var(--border-muted);
+  padding: 0.5rem;
+  background: #fafafa;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--text-body);
+  cursor: pointer;
+  user-select: none;
+  padding: 0.15rem 0;
+  transition: color var(--transition-fast);
+}
+
+.checkbox-label:hover {
+  color: var(--primary);
+}
+
+.checkbox-label input[type="checkbox"] {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--neutral-black);
+  background-color: var(--bg-input);
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  transition: background-color var(--transition-fast);
+}
+
+.checkbox-label input[type="checkbox"]::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  transform: scale(0);
+  transition: 80ms transform ease;
+  background-color: #ffffff;
+}
+
+.checkbox-label input[type="checkbox"]:checked {
+  background-color: var(--neutral-black);
+  border-color: var(--neutral-black);
+}
+
+.checkbox-label input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.toggle-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  border-top: 1px solid var(--border-muted);
+  padding-top: 1rem;
+}
+
+.toggle-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-body);
+  cursor: pointer;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 18px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-input);
+  border: 1px solid var(--neutral-black);
+  transition: .15s;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--neutral-black);
+  transition: .15s;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+  transform: translateX(20px);
+  background-color: #ffffff;
+}
+
+/* Reset button - Flat outline */
+.btn-reset {
+  width: 100%;
+  padding: 0.75rem;
+  background: transparent;
+  border: 1px solid var(--neutral-black);
+  color: var(--neutral-black);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-reset:hover {
+  background: var(--neutral-black);
+  color: #ffffff;
+}
+
+/* Main Content Panel */
+.main-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Tabs - Typographic Underline */
+.tabs-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--neutral-black);
+  padding-bottom: 0px;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.tab-btn:hover {
+  color: var(--neutral-black);
+}
+
+.tab-btn.active {
+  color: var(--primary);
+}
+
+.tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--primary);
+}
+
+.tab-btn-badge {
+  background: var(--border-muted);
+  color: var(--text-main);
+  font-size: 0.75rem;
+  padding: 0.1rem 0.4rem;
+  margin-left: 0.5rem;
+  font-weight: 700;
+  font-family: var(--font-body);
+}
+
+.tab-btn.active .tab-btn-badge {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+/* Sort Select - Typographic Menu */
+.sort-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.sort-select {
+  padding: 0.4rem 1.5rem 0.4rem 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid var(--neutral-black);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23000000'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.4rem center;
+  background-size: 0.8rem;
+}
+
+.sort-dir-btn {
+  background: #ffffff;
+  border: 1px solid var(--neutral-black);
+  color: var(--neutral-black);
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.sort-dir-btn:hover {
+  background: var(--neutral-black);
+  color: #ffffff;
+}
+
+/* Summary Banner - Flat Grid Bold Numbers */
+.stats-banner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.stat-widget {
+  background: #ffffff;
+  border: 1px solid var(--neutral-black);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-widget-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.stat-widget-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-bright);
+  line-height: 1.1;
+  font-family: var(--font-sans);
+}
+
+.stat-widget-desc {
+  font-size: 0.8rem;
+  color: var(--text-dimmed);
+  font-weight: 500;
+}
+
+.stat-widget.success {
+  border-top: 4px solid var(--success);
+}
+.stat-widget.accent {
+  border-top: 4px solid var(--accent);
+}
+.stat-widget.primary {
+  border-top: 4px solid var(--primary);
+}
+
+/* JobFeed List */
+.job-feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.no-jobs-card {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.no-jobs-icon {
+  font-size: 3rem;
+  color: var(--neutral-black);
+}
+
+/* Job Card Styling - Swiss Grid, High Contrast, Flat */
+.job-card {
+  transition: border-color var(--transition-fast);
+  background: #ffffff;
+}
+
+.job-card:hover {
+  border-color: var(--primary);
+}
+
+.job-card.qualified {
+  border-left: 5px solid var(--neutral-black);
+}
+
+.job-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.job-card-title-area h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  line-height: 1.2;
+}
+
+.job-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.inst-name {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.dot-separator {
+  color: var(--border-muted);
+}
+
+.job-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+/* Badges styling - Flat Solid Rectangles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-level {
+  background: var(--neutral-black);
+  color: #ffffff;
+}
+
+.badge-source {
+  background: var(--border-muted);
+  color: var(--text-muted);
+}
+
+.badge-qualified {
+  background: var(--success);
+  color: #ffffff;
+}
+
+.badge-unqualified {
+  background: #f0f0f4;
+  color: var(--text-muted);
+  border: 1px solid var(--border-muted);
+}
+
+.badge-salary-bump {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+/* Details grid - Flat columns, solid borders */
+.job-card-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem 0;
+  margin: 0.75rem 0;
+  border-top: 1px solid var(--border-muted);
+  border-bottom: 1px solid var(--border-muted);
+  font-size: 0.88rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.detail-label {
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.detail-value {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.detail-value.salary-range {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.job-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.post-date {
+  color: var(--text-muted);
+}
+
+.action-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.btn-toggle-desc {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color var(--transition-fast);
+}
+
+.btn-toggle-desc:hover {
+  color: var(--primary);
+}
+
+.link-apply {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--neutral-black);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+  border-bottom: 2px solid var(--neutral-black);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.link-apply:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.job-description-drawer {
+  margin-top: 1rem;
+  padding: 1.25rem;
+  background: #fafafa;
+  border: 1px solid var(--neutral-black);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-body);
+  max-height: 400px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+/* Analytics Tab Elements */
+.analytics-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.benchmark-banner {
+  background: var(--neutral-black);
+  color: #ffffff;
+  border: none;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.benchmark-banner-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.benchmark-banner-title svg {
+  color: var(--primary);
+}
+
+.benchmark-banner-text {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+}
+
+.benchmark-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.benchmark-stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.benchmark-stat-num {
+  font-size: 1.8rem;
+  font-weight: 800;
+  font-family: var(--font-sans);
+}
+
+.benchmark-stat-num.positive {
+  color: #00ff88;
+}
+.benchmark-stat-num.neutral {
+  color: #00e1ff;
+}
+.benchmark-stat-num.negative {
+  color: #ff5e5e;
+}
+
+/* Custom CSS Salary Chart styling - Swiss Grid */
+.chart-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chart-header-legend {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+}
+
+.legend-color.range {
+  background: var(--neutral-black);
+}
+
+.legend-color.user {
+  background-color: var(--primary);
+}
+
+.salary-chart-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.chart-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  align-items: center;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--border-muted);
+  padding-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .chart-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+.chart-row-label {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.chart-row-visual-container {
+  position: relative;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.chart-bar-axis {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f2f2f7;
+  pointer-events: none;
+}
+
+.chart-bar-range {
+  position: absolute;
+  height: 8px;
+  background: var(--neutral-black);
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chart-bar-range:hover {
+  background: var(--primary);
+  height: 10px;
+}
+
+.chart-bar-min-lbl, .chart-bar-max-lbl {
+  position: absolute;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  top: -16px;
+  font-weight: 700;
+}
+
+.chart-bar-min-lbl {
+  left: 0;
+  transform: translateX(-50%);
+}
+
+.chart-bar-max-lbl {
+  right: 0;
+  transform: translateX(50%);
+}
+
+.chart-user-salary-marker {
+  position: absolute;
+  width: 4px;
+  height: 24px;
+  background-color: var(--primary);
+  z-index: 10;
+  transition: left var(--transition-normal);
+}
+
+.chart-user-salary-marker::after {
+  content: "YOUR SALARY";
+  position: absolute;
+  bottom: -18px;
+  transform: translateX(-50%);
+  left: 50%;
+  font-size: 0.7rem;
+  color: #ffffff;
+  background-color: var(--primary);
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 1px 4px;
+}
+
+.chart-axis-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 2px solid var(--neutral-black);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+/* Experience mapping layout */
+.exp-mapping-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.exp-mapping-card {
+  background: #ffffff;
+  border: 1px solid var(--neutral-black);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color var(--transition-fast);
+}
+
+.exp-mapping-card.qualified {
+  border-top: 4px solid var(--success);
+}
+.exp-mapping-card.target {
+  border-top: 4px solid var(--primary);
+}
+
+.exp-mapping-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.exp-mapping-card-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  color: var(--text-bright);
+}
+
+.exp-mapping-avg-years {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.exp-mapping-status {
+  margin-top: 0.25rem;
+}
+
+.exp-comparison-bar {
+  height: 4px;
+  background-color: var(--border-muted);
+  position: relative;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.exp-comparison-fill {
+  height: 100%;
+  background-color: var(--neutral-black);
+}
+
+.exp-comparison-fill.insufficient {
+  background-color: var(--border-muted);
+}
+
+.exp-comparison-fill.target-lvl {
+  background-color: var(--primary);
+}
+
+/* Disclaimer styles */
+.disclaimer-card {
+  background: #f2f2f7;
+  border: 1px solid var(--neutral-black);
+  padding: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.disclaimer-card svg {
+  flex-shrink: 0;
+  color: var(--neutral-black);
+}
+
+/* Regression Tab Elements */
+.regression-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.regression-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .regression-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.regression-calculator-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.regression-results-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--neutral-black);
+  background-color: var(--bg-app);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.regression-results-val {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--primary);
+  font-family: var(--font-sans);
+  line-height: 1;
+  margin: 0.5rem 0;
+}
+
+.regression-results-range {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-body);
+}
+
+/* Visualization Styles */
+.regression-visual-wrapper {
+  position: relative;
+  height: 60px;
+  background-color: #f2f2f7;
+  border: 1px solid var(--neutral-black);
+  margin: 2.5rem 0;
+}
+
+.regression-axis-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  background-color: var(--border-muted);
+  transform: translateY(-50%);
+}
+
+.regression-band-range {
+  position: absolute;
+  top: 15%;
+  bottom: 15%;
+  background-color: rgba(0, 85, 255, 0.15);
+  border: 2px solid var(--accent);
+  transition: all var(--transition-normal);
+}
+
+.regression-marker-predicted {
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  width: 6px;
+  background-color: var(--neutral-black);
+  border: 1px solid #ffffff;
+  transform: translateX(-50%);
+  z-index: 5;
+  transition: left var(--transition-normal);
+}
+
+.regression-marker-predicted::after {
+  content: "PREDICTED MIN";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--neutral-black);
+  white-space: nowrap;
+}
+
+.regression-marker-user {
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  width: 14px;
+  height: 14px;
+  border-radius: 0%; /* Flat square marker for Swiss theme alignment */
+  background-color: var(--primary);
+  border: 2px solid #ffffff;
+  transform: translate(-50%, 18px);
+  z-index: 6;
+  transition: left var(--transition-normal);
+}
+
+.regression-marker-user::after {
+  content: "YOUR SALARY";
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+/* Stats and coefficients styles */
+.regression-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .regression-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--neutral-black);
+  margin-top: 1rem;
+}
+
+.regression-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+.regression-table th,
+.regression-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-muted);
+}
+
+.regression-table th {
+  background-color: var(--neutral-black);
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.regression-table tr:last-child td {
+  border-bottom: none;
+}
+
+.regression-table tr:hover td {
+  background-color: #fafafa;
+}
+
+.significance-legend {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+

@@ -1,0 +1,306 @@
+[
+{
+"staging_id": "41addc0c-3bfd-48eb-96c1-9090c3c47883",
+"institution": {
+"name": "The University of Arizona",
+"state_location": "AZ",
+"city_location": "Tucson"
+},
+"job_posting": {
+"job_title": "Associate General Counsel",
+"JD_required": 1,
+"standardized_level": "Associate General Counsel",
+"reports_to": null,
+"salary_min": 117883,
+"salary_max": 153248,
+"is_commensurate_with_experience": 1,
+"min_years": 3,
+"pref_years": null
+}
+},
+{
+"staging_id": "44556747-74ff-4182-8c89-2bf118f32568",
+"institution": {
+"name": "University of Notre Dame",
+"state_location": "IN",
+"city_location": "Notre Dame"
+},
+"job_posting": {
+"job_title": "Associate General Counsel Research & Intellectual Property",
+"JD_required": 1,
+"standardized_level": "Associate General Counsel",
+"reports_to": "Senior Associate General Counsel (R&IP)",
+"salary_min": null,
+"salary_max": null,
+"is_commensurate_with_experience": 1,
+"min_years": 7,
+"pref_years": null
+}
+},
+{
+"staging_id": "44726c53-dc26-49c4-8336-56859f50cc4f",
+"institution": {
+"name": "Appalachian State University",
+"state_location": "NC",
+"city_location": "Boone"
+},
+"job_posting": {
+"job_title": "Assistant General Counsel",
+"JD_required": 1,
+"standardized_level": "Assistant General Counsel",
+"reports_to": null,
+"salary_min": 95000,
+"salary_max": 107120,
+"is_commensurate_with_experience": 0,
+"min_years": null,
+"pref_years": null
+}
+},
+{
+"staging_id": "56d6db53-2c4c-4978-bd44-0125d16ec4d2",
+"institution": {
+"name": "Xavier University",
+"state_location": "OH",
+"city_location": "Cincinnati"
+},
+"job_posting": {
+"job_title": "Associate General Counsel",
+"JD_required": 1,
+"standardized_level": "Associate General Counsel",
+"reports_to": "General Counsel",
+"salary_min": null,
+"salary_max": null,
+"is_commensurate_with_experience": 0,
+"min_years": 5,
+"pref_years": null
+}
+},
+{
+"staging_id": "65c883f2-8725-4e8b-8033-d02e45b316df",
+"institution": {
+"name": "Eastern New Mexico University",
+"state_location": "NM",
+"city_location": "Portales"
+},
+"job_posting": {
+"job_title": "Staff Attorney",
+"JD_required": 1,
+"standardized_level": "Legal Counsel/Staff Attorney",
+"reports_to": "Executive Director of System HR/Policy and Planning",
+"salary_min": null,
+"salary_max": null,
+"is_commensurate_with_experience": 0,
+"min_years": 1,
+"pref_years": null
+}
+},
+{
+"staging_id": "699d4e25-3f9b-4009-8de1-2ccd39d047b0",
+"institution": {
+"name": "University of Pennsylvania",
+"state_location": "PA",
+"city_location": "Philadelphia"
+},
+"job_posting": {
+"job_title": "Gittis Legal Clinics Paralegal",
+"JD_required": 0,
+"standardized_level": "Paralegal",
+"reports_to": "Gittis Legal Clinics Executive Director",
+"salary_min": 69284.8,
+"salary_max": 88358.4,
+"is_commensurate_with_experience": 1,
+"min_years": 3,
+"pref_years": null
+}
+},
+{
+"staging_id": "6de66920-a48d-4aac-ac00-255272a663b3",
+"institution": {
+"name": "University of Colorado",
+"state_location": "CO",
+"city_location": "Denver"
+},
+"job_posting": {
+"job_title": "Assistant Director of Claims Administration",
+"JD_required": 0,
+"standardized_level": "Paralegal",
+"reports_to": "Assistant Vice President and Deputy Chief Risk Officer for University Risk Management (URM)",
+"salary_min": 130000,
+"salary_max": 145000,
+"is_commensurate_with_experience": 1,
+"min_years": 7,
+"pref_years": 10
+}
+},
+{
+"staging_id": "8269b36c-a132-4560-9727-e302fbf4bbd0",
+"institution": {
+"name": "Georgia Southern University",
+"state_location": "GA",
+"city_location": "Statesboro"
+},
+"job_posting": {
+"job_title": "Vice President of Legal Affairs",
+"JD_required": 1,
+"standardized_level": "General Counsel",
+"reports_to": "President",
+"salary_min": null,
+"salary_max": null,
+"is_commensurate_with_experience": 1,
+"min_years": 6,
+"pref_years": null
+}
+},
+{
+"staging_id": "9d8e40f4-f93b-4a43-973d-415d1e9fd0a6",
+"institution": {
+"name": "Boston College",
+"state_location": "MA",
+"city_location": "Boston"
+},
+"job_posting": {
+"job_title": "Associate General Counsel- Real Estate",
+"JD_required": 1,
+"standardized_level": "Associate General Counsel",
+"reports_to": "General Counsel",
+"salary_min": 198950,
+"salary_max": 248700,
+"is_commensurate_with_experience": 1,
+"min_years": 8,
+"pref_years": 10
+}
+},
+{
+"staging_id": "bd9cf7d5-ae03-421c-adf7-feeaed69359b",
+"institution": {
+"name": "University of Cincinnati",
+"state_location": "OH",
+"city_location": "Cincinnati"
+},
+"job_posting": {
+"job_title": "Associate General Counsel, Intellectual Property, Office of General Counsel",
+"JD_required": 1,
+"standardized_level": "Associate General Counsel",
+"reports_to": "Vice President for Legal Affairs & General Counsel",
+"salary_min": null,
+"salary_max": null,
+"is_commensurate_with_experience": 1,
+"min_years": 10,
+"pref_years": null
+}
+},
+{
+"staging_id": "e2d4a5a9-438c-4acd-b73e-51695bc9a0da",
+"institution": {
+"name": "New Mexico State University",
+"state_location": "NM",
+"city_location": "Las Cruces"
+},
+"job_posting": {
+"job_title": "Associate General Counsel",
+"JD_required": 1,
+"standardized_level": "Associate General Counsel",
+"reports_to": "General Counsel",
+"salary_min": 115000,
+"salary_max": 120000,
+"is_commensurate_with_experience": 1,
+"min_years": null,
+"pref_years": null
+}
+},
+{
+"staging_id": "e3d622fd-f979-4863-8f59-6671e8cadd1c",
+"institution": {
+"name": "University of New Mexico",
+"state_location": "NM",
+"city_location": "Albuquerque"
+},
+"job_posting": {
+"job_title": "Administrative Hearing Advisor",
+"JD_required": 0,
+"standardized_level": "Title IX",
+"reports_to": null,
+"salary_min": 72675.2,
+"salary_max": 72675.2,
+"is_commensurate_with_experience": 0,
+"min_years": 3,
+"pref_years": null
+}
+},
+{
+"staging_id": "f61b2151-5139-457f-b767-67f1cf498492",
+"institution": {
+"name": "University of Colorado Denver",
+"state_location": "CO",
+"city_location": "Denver"
+},
+"job_posting": {
+"job_title": "Assistant Director of Claims Administration",
+"JD_required": 0,
+"standardized_level": "Paralegal",
+"reports_to": "Assistant Vice President and Deputy Chief Risk Officer for University Risk Management (URM)",
+"salary_min": 130000,
+"salary_max": 145000,
+"is_commensurate_with_experience": 1,
+"min_years": 7,
+"pref_years": 10
+}
+},
+{
+"staging_id": "a2f719450714760a2faf788a8b43c0b3",
+"institution": {
+"name": "Arizona State University",
+"state_location": "AZ",
+"city_location": "Tempe"
+},
+"job_posting": {
+"job_title": "Associate General Counsel",
+"JD_required": 1,
+"standardized_level": "Associate General Counsel",
+"reports_to": null,
+"salary_min": 184480.11,
+"salary_max": 184480.11,
+"is_commensurate_with_experience": 1,
+"min_years": 6,
+"pref_years": null
+}
+},
+{
+"staging_id": "f09997369491e6aa1f51faf407f5bd70",
+"institution": {
+"name": "Utah State University",
+"state_location": "UT",
+"city_location": "Logan"
+},
+"job_posting": {
+"job_title": "University General Counsel",
+"JD_required": 1,
+"standardized_level": "General Counsel",
+"reports_to": "Board of Trustees, President",
+"salary_min": 250000,
+"salary_max": null,
+"is_commensurate_with_experience": 1,
+"min_years": 11,
+"pref_years": null
+}
+},
+{
+"staging_id": "f1263f35457f5624240251e4b1a1fef2",
+"institution": {
+"name": "Johns Hopkins University",
+"state_location": "MD",
+"city_location": "Baltimore"
+},
+"job_posting": {
+"job_title": "Practice Group Leader- Litigation & Contested Matters (Office of Sr. Vice President & General Counsel)",
+"JD_required": 1,
+"standardized_level": "Associate General Counsel",
+"reports_to": "Deputy General Counsel",
+"salary_min": 275000,
+"salary_max": 350000,
+"is_commensurate_with_experience": 1,
+"min_years": 10,
+"pref_years": null
+}
+}
+]

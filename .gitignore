@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Local Data / Database
+submissions.json
+
+# Environment / Secrets
+.env
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Large media files
+*.mov
+
